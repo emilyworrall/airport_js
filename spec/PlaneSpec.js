@@ -8,6 +8,17 @@ describe('Plane', function() {
     expect(plane).toBeFlying();
   });
 
+  it('should not be flying when landed', function() {
+    plane.land();
+    expect(plane).not.toBeFlying();
+  });
+
+  it('should be flying after takeoff', function() {
+    plane.land();
+    plane.takeoff();
+    expect(plane).toBeFlying();
+  });
+
   // describe("when song has been paused", function() {
   //   beforeEach(function() {
   //     player.play(song);
